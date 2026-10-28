@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Spendenzweck</label>
+        <name>GDS_ColDesignation</name>
+    </customLabels>
+    <customLabels>
+        <label>Betrag</label>
+        <name>GDS_ColAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Prozent</label>
+        <name>GDS_ColPercent</name>
+    </customLabels>
+    <customLabels>
+        <label>Zeile hinzufügen</label>
+        <name>GDS_AddRow</name>
+    </customLabels>
+    <customLabels>
+        <label>Zeile entfernen</label>
+        <name>GDS_RemoveRow</name>
+    </customLabels>
+    <customLabels>
+        <label>Rest übernehmen</label>
+        <name>GDS_TakeRemainder</name>
+    </customLabels>
+    <customLabels>
+        <label>Gesamtbetrag</label>
+        <name>GDS_TotalAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Verteilt</label>
+        <name>GDS_AllocatedAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Restbetrag</label>
+        <name>GDS_RemainingAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Bitte zuerst Betrag erfassen.</label>
+        <name>GDS_EnterAmountFirst</name>
+    </customLabels>
+    <customLabels>
+        <label>Die verteilte Summe überschreitet den Gesamtbetrag um {0}.</label>
+        <name>GDS_OverAllocated</name>
+    </customLabels>
+    <customLabels>
+        <label>Diese Zeile überschreitet den Gesamtbetrag.</label>
+        <name>GDS_RowOverAllocated</name>
+    </customLabels>
+    <customLabels>
+        <label>Offener Restbetrag: {0}.</label>
+        <name>GDS_RemainingOpen</name>
+    </customLabels>
+    <customLabels>
+        <label>Der Gesamtbetrag ist vollständig verteilt.</label>
+        <name>GDS_FullyAllocated</name>
+    </customLabels>
+    <customLabels>
+        <label>Bitte einen Spendenzweck auswählen.</label>
+        <name>GDS_DesignationRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Der Betrag muss grösser als 0 sein.</label>
+        <name>GDS_AmountGreaterZero</name>
+    </customLabels>
+    <customLabels>
+        <label>Maximal {0} Zeilen möglich.</label>
+        <name>GDS_MaxRowsReached</name>
+    </customLabels>
+    <customLabels>
+        <label>Bitte genau 100 % des Gesamtbetrags verteilen und alle Zeilen vollständig erfassen.</label>
+        <name>GDS_ValidateError</name>
+    </customLabels>
+    <customLabels>
+        <label>Keine Spendenzwecke verfügbar.</label>
+        <name>GDS_NoDesignations</name>
+    </customLabels>
+    <customLabels>
+        <label>Spendenzweck suchen...</label>
+        <name>GDS_SearchPlaceholder</name>
+    </customLabels>
+    <customLabels>
+        <label>Keine Treffer</label>
+        <name>GDS_NoResults</name>
+    </customLabels>
+    <customLabels>
+        <label>Auswahl entfernen</label>
+        <name>GDS_ClearSelection</name>
+    </customLabels>
+</Translations>

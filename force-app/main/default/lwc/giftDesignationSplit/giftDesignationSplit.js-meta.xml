@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Gift Designation Split</masterLabel>
+    <description>Verteilt den Betrag einer Gift Transaction auf 1 bis max. 10 Gift Designations und gibt GiftTransactionDesignation-Records an den Flow zurück.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="totalAmount" type="String" role="inputOnly" required="true"
+                      label="Total Amount"
+                      description="Gesamtbetrag der Spende (Number/Currency-Ressource oder Feld). Reaktiv: Änderungen auf demselben Screen werden sofort übernommen."/>
+            <property name="availableDesignations" type="@salesforce/schema/GiftDesignation[]" role="inputOnly" required="true"
+                      label="Available Gift Designations"
+                      description="Record Collection aus einem vorgelagerten Get Records. Alle in Display Fields und Search Fields genannten Felder müssen dort mitgeladen werden."/>
+            <property name="displayFields" type="String" role="inputOnly"
+                      label="Display Fields"
+                      description="Kommagetrennte API-Namen von Zusatzfeldern, die in den Suchtreffern unter dem Namen angezeigt werden."/>
+            <property name="searchFields" type="String" role="inputOnly"
+                      label="Search Fields"
+                      description="Kommagetrennte API-Namen von Feldern, die zusätzlich zum Namen durchsuchbar sind (z. B. Nummern)."/>
+            <property name="maxRows" type="Integer" role="inputOnly" default="10"
+                      label="Max Rows"
+                      description="Maximale Anzahl Zeilen (1–10). Default 10."/>
+            <property name="defaultDesignationId" type="String" role="inputOnly"
+                      label="Default Designation Id"
+                      description="ID einer Standard-Gift-Designation, die in der ersten Zeile vorausgewählt wird. Ist sie nicht in Available Gift Designations enthalten, bleibt die Zeile leer."/>
+            <property name="designationRecords" type="@salesforce/schema/GiftTransactionDesignation[]"
+                      label="Designation Records"
+                      description="Output: Je Zeile ein Record mit GiftDesignationId, Amount und Percent. GiftTransactionId setzt der Flow nach Anlage der Gift Transaction. Optional als Input für die Wiederherstellung bei Zurück-Navigation."/>
+            <property name="allocatedAmount" type="String" role="outputOnly"
+                      label="Allocated Amount"
+                      description="Output: Summe der verteilten Beträge."/>
+            <property name="isValid" type="Boolean" role="outputOnly"
+                      label="Is Valid"
+                      description="Output: true, wenn genau 100 % des Gesamtbetrags verteilt sind."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

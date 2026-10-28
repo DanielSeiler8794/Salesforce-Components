@@ -1,0 +1,128 @@
+<template>
+    <div class="gds-container">
+        <template lwc:if={hasNoDesignations}>
+            <div class="gds-status gds-status_warning slds-m-bottom_small" role="status">
+                <lightning-icon icon-name="utility:warning" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+                <span>{labels.noDesignations}</span>
+            </div>
+        </template>
+
+        <!-- Spaltenüberschriften -->
+        <div class="gds-header slds-grid slds-gutters_x-small slds-p-bottom_xx-small" aria-hidden="true">
+            <div class="slds-col gds-col-designation slds-text-title_caps">{labels.colDesignation}</div>
+            <div class="slds-col gds-col-amount slds-text-title_caps">{labels.colAmount}</div>
+            <div class="slds-col gds-col-percent slds-text-title_caps">{labels.colPercent}</div>
+            <div class="slds-col gds-col-actions"></div>
+        </div>
+
+        <!-- Zeilen -->
+        <template for:each={rowViews} for:item="row">
+            <div key={row.key} class={row.rowClass} data-row={row.key}>
+                <div class="slds-col gds-col-designation">
+                    <c-gift-designation-combobox
+                        data-key={row.key}
+                        label={row.designationLabel}
+                        options={row.options}
+                        value={row.designationId}
+                        disabled={row.disabled}
+                        required
+                        error-message={row.designationError}
+                        onselect={handleDesignationSelect}>
+                    </c-gift-designation-combobox>
+                </div>
+                <div class="slds-col gds-col-amount">
+                    <lightning-input
+                        data-key={row.key}
+                        data-field="amount"
+                        type="number"
+                        step="0.01"
+                        min="0"
+                        label={row.amountLabel}
+                        variant="label-hidden"
+                        class={row.amountInputClass}
+                        value={row.amountValue}
+                        disabled={row.disabled}
+                        onchange={handleAmountChange}
+                        onblur={handleFieldBlur}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col gds-col-percent">
+                    <lightning-input
+                        data-key={row.key}
+                        data-field="percent"
+                        type="number"
+                        step="0.01"
+                        min="0"
+                        label={row.percentLabel}
+                        variant="label-hidden"
+                        value={row.percentValue}
+                        disabled={row.disabled}
+                        onchange={handlePercentChange}
+                        onblur={handleFieldBlur}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col gds-col-actions slds-grid slds-grid_vertical-align-start">
+                    <lightning-button
+                        data-key={row.key}
+                        data-action="takeRemainder"
+                        label={labels.takeRemainder}
+                        disabled={row.isTakeRemainderDisabled}
+                        onclick={handleTakeRemainder}>
+                    </lightning-button>
+                    <lightning-button-icon
+                        data-key={row.key}
+                        data-action="remove"
+                        class="slds-m-left_xx-small"
+                        icon-name="utility:delete"
+                        variant="border-filled"
+                        alternative-text={labels.removeRow}
+                        title={labels.removeRow}
+                        disabled={row.isRemoveDisabled}
+                        onclick={handleRemoveRow}>
+                    </lightning-button-icon>
+                </div>
+                <template lwc:if={row.hasAmountError}>
+                    <div class="slds-col slds-size_1-of-1 slds-text-color_error slds-text-body_small gds-row-error" data-error={row.key}>
+                        {row.amountError}
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <!-- Zeile hinzufügen -->
+        <div class="slds-grid slds-grid_vertical-align-center slds-m-top_x-small">
+            <lightning-button
+                data-action="addRow"
+                label={labels.addRow}
+                icon-name="utility:add"
+                disabled={isAddRowDisabled}
+                onclick={handleAddRow}>
+            </lightning-button>
+            <template lwc:if={isMaxRowsReached}>
+                <span class="slds-m-left_small slds-text-color_weak slds-text-body_small gds-max-rows">{maxRowsMessage}</span>
+            </template>
+        </div>
+
+        <!-- Summen -->
+        <div class="gds-summary slds-grid slds-wrap slds-m-top_medium slds-p-around_small">
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-text-title">{labels.totalAmount}</div>
+                <div class="slds-text-heading_small gds-total">{formattedTotal}</div>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-text-title">{labels.allocatedAmount}</div>
+                <div class="slds-text-heading_small gds-allocated">{formattedAllocated}</div>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-text-title">{labels.remainingAmount}</div>
+                <div class={remainingClass}><span class="gds-remaining">{formattedRemaining}</span></div>
+            </div>
+        </div>
+
+        <!-- Statusmeldung -->
+        <div class={statusMessage.className} role={statusMessage.role} data-status={statusMessage.type}>
+            <lightning-icon icon-name={statusMessage.icon} size="x-small" class="slds-m-right_x-small"></lightning-icon>
+            <span class="gds-status-text">{statusMessage.text}</span>
+        </div>
+    </div>
+</template>

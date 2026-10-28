@@ -1,0 +1,91 @@
+<template>
+    <div class={formElementClass}>
+        <label class="slds-form-element__label slds-assistive-text" for={inputId}>
+            <template lwc:if={required}><abbr class="slds-required" title="*">*</abbr></template>
+            {label}
+        </label>
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container slds-has-selection">
+                <div class={comboboxClass}>
+                    <!-- Ausgewählter Wert -->
+                    <template lwc:if={hasSelection}>
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                            <div class="slds-input slds-combobox__input slds-combobox__input-value selected-value" data-id="selected" title={selectedName}>
+                                <span class="slds-truncate selected-name">{selectedName}</span>
+                                <template lwc:if={selectedDetails}>
+                                    <span class="slds-truncate slds-text-color_weak selected-details">{selectedDetails}</span>
+                                </template>
+                            </div>
+                            <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+                                    title={labels.clearSelection}
+                                    disabled={disabled}
+                                    data-id="clear"
+                                    onclick={handleClear}>
+                                <lightning-icon icon-name="utility:close" size="x-small" alternative-text={labels.clearSelection}></lightning-icon>
+                            </button>
+                        </div>
+                    </template>
+                    <!-- Suchfeld -->
+                    <template lwc:else>
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                            <input type="text"
+                                   id={inputId}
+                                   class="slds-input slds-combobox__input"
+                                   role="combobox"
+                                   autocomplete="off"
+                                   aria-autocomplete="list"
+                                   aria-controls={listboxId}
+                                   aria-expanded={ariaExpanded}
+                                   aria-activedescendant={activeDescendant}
+                                   aria-describedby={errorId}
+                                   aria-label={label}
+                                   placeholder={placeholder}
+                                   value={searchTerm}
+                                   disabled={disabled}
+                                   onfocus={handleFocus}
+                                   oninput={handleInput}
+                                   onblur={handleBlur}
+                                   onkeydown={handleKeyDown} />
+                            <span class="slds-icon_container slds-input__icon slds-input__icon_right">
+                                <lightning-icon icon-name="utility:search" size="x-small"></lightning-icon>
+                            </span>
+                        </div>
+                        <div id={listboxId} class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                <template lwc:if={hasResults}>
+                                    <template for:each={filteredOptions} for:item="option">
+                                        <li key={option.id} role="presentation" class="slds-listbox__item">
+                                            <div id={option.domId}
+                                                 class={option.optionClass}
+                                                 role="option"
+                                                 aria-selected={option.ariaSelected}
+                                                 data-id={option.id}
+                                                 onmousedown={handleOptionMouseDown}>
+                                                <span class="slds-media__body">
+                                                    <span class="slds-listbox__option-text slds-listbox__option-text_entity option-name">{option.name}</span>
+                                                    <template lwc:if={option.hasDetails}>
+                                                        <span class="slds-listbox__option-meta slds-listbox__option-meta_entity option-details">{option.detailText}</span>
+                                                    </template>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </template>
+                                <template lwc:else>
+                                    <li role="presentation" class="slds-listbox__item">
+                                        <div class="slds-listbox__option slds-listbox__option_plain no-results" role="presentation">
+                                            {labels.noResults}
+                                        </div>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <template lwc:if={hasError}>
+            <div class="slds-form-element__help" id={errorId}>{errorMessage}</div>
+        </template>
+    </div>
+</template>
