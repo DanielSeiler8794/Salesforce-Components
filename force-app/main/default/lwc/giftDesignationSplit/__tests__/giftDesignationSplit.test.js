@@ -312,6 +312,13 @@ describe('c-gift-designation-split', () => {
         expect(rowElement(element, 0, 'lightning-input[data-field="amount"]').value).toBe('250.50');
     });
 
+    it('übernimmt einen Currency-Wert mit Rappen als Gesamtbetrag', async () => {
+        const element = createComponent({ totalAmount: 1234.56 });
+        await flushPromises();
+        expect(rowElement(element, 0, 'lightning-input[data-field="amount"]').value).toBe('1234.56');
+        expect(element.totalAmount).toBe(1234.56);
+    });
+
     it('TF10: Betrag 0 oder leer deaktiviert die Zeilen und blockiert Weiter', async () => {
         for (const total of [0, null, '']) {
             const element = createComponent({ totalAmount: total });

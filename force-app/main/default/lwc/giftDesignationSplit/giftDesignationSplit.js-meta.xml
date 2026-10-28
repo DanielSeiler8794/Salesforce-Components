@@ -9,9 +9,9 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="totalAmount" type="String" role="inputOnly" required="true"
+            <property name="totalAmount" type="Integer" role="inputOnly" required="true"
                       label="Total Amount"
-                      description="Gesamtbetrag der Spende (Number/Currency-Ressource oder Feld). Reaktiv: Änderungen auf demselben Screen werden sofort übernommen."/>
+                      description="Gesamtbetrag der Spende als Currency-/Number-Feld oder -Ressource (z. B. Amount der Gift Transaction oder die Currency-Komponente auf demselben Screen). Reaktiv: Änderungen auf demselben Screen werden sofort übernommen."/>
             <property name="availableDesignations" type="@salesforce/schema/GiftDesignation[]" role="inputOnly" required="true"
                       label="Available Gift Designations"
                       description="Record Collection aus einem vorgelagerten Get Records. Alle in Display Fields und Search Fields genannten Felder müssen dort mitgeladen werden."/>
@@ -30,7 +30,7 @@
             <property name="designationRecords" type="@salesforce/schema/GiftTransactionDesignation[]"
                       label="Designation Records"
                       description="Output: Je Zeile ein Record mit GiftDesignationId, Amount und Percent. GiftTransactionId setzt der Flow nach Anlage der Gift Transaction. Optional als Input für die Wiederherstellung bei Zurück-Navigation."/>
-            <property name="allocatedAmount" type="String" role="outputOnly"
+            <property name="allocatedAmount" type="Integer" role="outputOnly"
                       label="Allocated Amount"
                       description="Output: Summe der verteilten Beträge."/>
             <property name="isValid" type="Boolean" role="outputOnly"

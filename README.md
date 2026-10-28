@@ -20,7 +20,7 @@ selbst, sondern gibt `GiftTransactionDesignation`-Records an den Flow zurück.
 
 | Property | Typ | Pflicht | Hinweis |
 | --- | --- | --- | --- |
-| `totalAmount` | Text (nimmt Number/Currency) | Ja | Reaktiv |
+| `totalAmount` | Currency / Number | Ja | Reaktiv, z. B. `Amount` der Gift Transaction oder die Currency-Eingabe auf demselben Screen |
 | `availableDesignations` | Record Collection `GiftDesignation` | Ja | Aus Get Records, dort gefiltert und sortiert |
 | `displayFields` | Text | Nein | z. B. `Code__c, Region__c` |
 | `searchFields` | Text | Nein | z. B. `Code__c` |
@@ -34,7 +34,7 @@ Alle in `displayFields`/`searchFields` genannten Felder müssen im Get Records m
 | Property | Typ | Hinweis |
 | --- | --- | --- |
 | `designationRecords` | Record Collection `GiftTransactionDesignation` | `GiftDesignationId`, `Amount`, `Percent`; `GiftTransactionId` setzt der Flow nach Anlage der Gift Transaction (Loop + Assignment, dann Create Records). Kann zusätzlich als Input gemappt werden, damit die Verteilung bei „Zurück“ erhalten bleibt. |
-| `allocatedAmount` | Text/Number | Summe der verteilten Beträge |
+| `allocatedAmount` | Currency / Number | Summe der verteilten Beträge |
 | `isValid` | Boolean | `true` bei genau 100 % Verteilung |
 
 „Weiter“ wird über die `validate()`-Methode blockiert, solange nicht genau 100 % verteilt sind.
@@ -47,6 +47,23 @@ Alle in `displayFields`/`searchFields` genannten Felder müssen im Get Records m
 - Betrag ist führend (2 Nachkommastellen); die 100 %-Prüfung erfolgt auf Basis der Beträge (in Cents).
 - Output-Prozente werden bei genau 100 % Verteilung so ausgeglichen, dass sie in Summe exakt 100 ergeben.
 - Bereits gewählte Designations werden in den anderen Zeilen ausgeblendet.
+
+> Technischer Hinweis: Im `js-meta.xml` sind `totalAmount` und `allocatedAmount` als `Integer` deklariert.
+> Das ist laut Salesforce-Schema der einzige numerische Property-Typ für Flow-Screen-Komponenten; Flow Builder
+> verknüpft ihn mit Currency- und Number-Ressourcen. Dass Rappenbeträge (z. B. 250.50) unverändert ankommen,
+> ist beim ersten Deploy zu prüfen.
+
+## Screenshots
+
+Lokal mit LWC OSS, Lightning Base Components und SLDS gerendert (Flow-Rahmen und Kopffelder nur angedeutet):
+
+| | |
+| --- | --- |
+| Standardfall | ![Standardfall](docs/screenshots/1-standardfall.png) |
+| Split, Suche, Rest offen | ![Split](docs/screenshots/2-split-suche-rest-offen.png) |
+| Überschreitung | ![Überschreitung](docs/screenshots/3-ueberschreitung.png) |
+| Vollständig verteilt | ![Vollständig](docs/screenshots/4-vollstaendig-verteilt.png) |
+| Kein Betrag | ![Kein Betrag](docs/screenshots/5-kein-betrag.png) |
 
 ## Mehrsprachigkeit
 

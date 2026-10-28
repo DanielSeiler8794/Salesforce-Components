@@ -5,12 +5,12 @@
             {label}
         </label>
         <div class="slds-form-element__control">
-            <div class="slds-combobox_container slds-has-selection">
+            <div class="slds-combobox_container">
                 <div class={comboboxClass}>
                     <!-- Ausgewählter Wert -->
                     <template lwc:if={hasSelection}>
                         <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
-                            <div class="slds-input slds-combobox__input slds-combobox__input-value selected-value" data-id="selected" title={selectedName}>
+                            <div class="slds-input selected-value" data-id="selected" title={selectedName}>
                                 <span class="slds-truncate selected-name">{selectedName}</span>
                                 <template lwc:if={selectedDetails}>
                                     <span class="slds-truncate slds-text-color_weak selected-details">{selectedDetails}</span>

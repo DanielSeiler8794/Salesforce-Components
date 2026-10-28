@@ -99,7 +99,10 @@ export default class GiftDesignationSplit extends LightningElement {
 
     // --- Reaktive Input-Parameter -------------------------------------------
 
-    /** Gesamtbetrag der Spende (reaktiv). Als Text/Zahl akzeptiert. */
+    /**
+     * Gesamtbetrag der Spende (reaktiv). Kommt aus einem Currency-/Number-Feld
+     * des Flows; Text wird zur Sicherheit ebenfalls akzeptiert.
+     */
     @api
     get totalAmount() {
         return fromCents(this._totalCents);
