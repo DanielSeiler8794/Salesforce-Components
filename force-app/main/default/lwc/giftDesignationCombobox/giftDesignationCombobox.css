@@ -1,0 +1,19 @@
+.selected-value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+    min-height: 2rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    padding-right: 2rem;
+    cursor: default;
+}
+
+.selected-details {
+    font-size: 0.75rem;
+}
+
+.slds-listbox__option {
+    cursor: pointer;
+}

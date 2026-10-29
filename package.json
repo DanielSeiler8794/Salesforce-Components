@@ -1,0 +1,14 @@
+{
+  "name": "gift-designation-split",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Screen-Flow-LWC zur Verteilung einer Gift Transaction auf mehrere Gift Designations (Nonprofit Cloud)",
+  "scripts": {
+    "test": "sfdx-lwc-jest",
+    "test:unit": "sfdx-lwc-jest",
+    "test:coverage": "sfdx-lwc-jest --coverage"
+  },
+  "devDependencies": {
+    "@salesforce/sfdx-lwc-jest": "^7.0.0"
+  }
+}

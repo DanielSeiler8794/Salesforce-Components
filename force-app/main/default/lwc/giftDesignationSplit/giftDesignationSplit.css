@@ -1,0 +1,93 @@
+.gds-col-designation {
+    flex: 1 1 14rem;
+    min-width: 12rem;
+}
+
+.gds-col-amount {
+    flex: 0 0 9rem;
+}
+
+.gds-col-percent {
+    flex: 0 0 7rem;
+}
+
+.gds-col-actions {
+    flex: 0 0 auto;
+    min-width: 10rem;
+}
+
+.gds-row {
+    border-bottom: 1px solid var(--slds-g-color-border-base-1, #e5e5e5);
+    align-items: flex-start;
+}
+
+.gds-row_error {
+    background-color: var(--slds-g-color-error-base-90, #fef1ee);
+    box-shadow: inset 3px 0 0 var(--slds-g-color-error-base-40, #ba0517);
+}
+
+.gds-row-error {
+    padding-top: 0.25rem;
+}
+
+.gds-summary {
+    background-color: var(--slds-g-color-neutral-base-95, #f3f3f3);
+    border-radius: 0.25rem;
+}
+
+.gds-text-warning {
+    color: var(--slds-g-color-warning-base-30, #8c4b02);
+}
+
+.gds-status {
+    display: flex;
+    align-items: center;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    border-left: 4px solid transparent;
+}
+
+.gds-status_info {
+    background-color: var(--slds-g-color-neutral-base-95, #f3f3f3);
+    border-left-color: var(--slds-g-color-neutral-base-50, #747474);
+}
+
+.gds-status_warning {
+    background-color: var(--slds-g-color-warning-base-90, #fef1cd);
+    border-left-color: var(--slds-g-color-warning-base-60, #dd7a01);
+}
+
+.gds-status_error {
+    background-color: var(--slds-g-color-error-base-90, #fef1ee);
+    border-left-color: var(--slds-g-color-error-base-40, #ba0517);
+    color: var(--slds-g-color-error-base-40, #ba0517);
+    font-weight: 600;
+}
+
+.gds-status_success {
+    background-color: var(--slds-g-color-success-base-90, #ebf7e6);
+    border-left-color: var(--slds-g-color-success-base-50, #2e844a);
+}
+
+/* Schmale Screens (z. B. Mobile): Spaltenkopf ausblenden, Felder umbrechen */
+@media (max-width: 47.9375em) {
+    .gds-header {
+        display: none;
+    }
+
+    .gds-col-designation {
+        flex-basis: 100%;
+    }
+
+    .gds-col-amount,
+    .gds-col-percent {
+        flex: 1 1 45%;
+        margin-top: 0.25rem;
+    }
+
+    .gds-col-actions {
+        flex-basis: 100%;
+        margin-top: 0.25rem;
+    }
+}

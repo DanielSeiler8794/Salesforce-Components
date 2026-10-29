@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>GDS_ColDesignation</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_ColDesignation</shortDescription>
+        <value>Gift Designation</value>
+    </labels>
+    <labels>
+        <fullName>GDS_ColAmount</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_ColAmount</shortDescription>
+        <value>Amount</value>
+    </labels>
+    <labels>
+        <fullName>GDS_ColPercent</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_ColPercent</shortDescription>
+        <value>Percent</value>
+    </labels>
+    <labels>
+        <fullName>GDS_AddRow</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_AddRow</shortDescription>
+        <value>Add row</value>
+    </labels>
+    <labels>
+        <fullName>GDS_RemoveRow</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_RemoveRow</shortDescription>
+        <value>Remove row</value>
+    </labels>
+    <labels>
+        <fullName>GDS_TakeRemainder</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_TakeRemainder</shortDescription>
+        <value>Take remainder</value>
+    </labels>
+    <labels>
+        <fullName>GDS_TotalAmount</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_TotalAmount</shortDescription>
+        <value>Total amount</value>
+    </labels>
+    <labels>
+        <fullName>GDS_AllocatedAmount</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_AllocatedAmount</shortDescription>
+        <value>Allocated</value>
+    </labels>
+    <labels>
+        <fullName>GDS_RemainingAmount</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_RemainingAmount</shortDescription>
+        <value>Remaining</value>
+    </labels>
+    <labels>
+        <fullName>GDS_EnterAmountFirst</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_EnterAmountFirst</shortDescription>
+        <value>Please enter the amount first.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_OverAllocated</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_OverAllocated</shortDescription>
+        <value>The allocated sum exceeds the total amount by {0}.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_RowOverAllocated</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_RowOverAllocated</shortDescription>
+        <value>This row exceeds the total amount.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_RemainingOpen</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_RemainingOpen</shortDescription>
+        <value>Remaining amount not yet allocated: {0}.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_FullyAllocated</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_FullyAllocated</shortDescription>
+        <value>The total amount is fully allocated.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_DesignationRequired</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_DesignationRequired</shortDescription>
+        <value>Please select a gift designation.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_AmountGreaterZero</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_AmountGreaterZero</shortDescription>
+        <value>The amount must be greater than 0.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_MaxRowsReached</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_MaxRowsReached</shortDescription>
+        <value>A maximum of {0} rows is possible.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_ValidateError</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_ValidateError</shortDescription>
+        <value>Please allocate exactly 100% of the total amount and complete all rows.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_NoDesignations</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_NoDesignations</shortDescription>
+        <value>No gift designations available.</value>
+    </labels>
+    <labels>
+        <fullName>GDS_SearchPlaceholder</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_SearchPlaceholder</shortDescription>
+        <value>Search gift designations...</value>
+    </labels>
+    <labels>
+        <fullName>GDS_NoResults</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_NoResults</shortDescription>
+        <value>No results</value>
+    </labels>
+    <labels>
+        <fullName>GDS_ClearSelection</fullName>
+        <categories>GiftDesignationSplit</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GDS_ClearSelection</shortDescription>
+        <value>Clear selection</value>
+    </labels>
+</CustomLabels>

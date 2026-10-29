@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Affectation du don</label>
+        <name>GDS_ColDesignation</name>
+    </customLabels>
+    <customLabels>
+        <label>Montant</label>
+        <name>GDS_ColAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Pourcentage</label>
+        <name>GDS_ColPercent</name>
+    </customLabels>
+    <customLabels>
+        <label>Ajouter une ligne</label>
+        <name>GDS_AddRow</name>
+    </customLabels>
+    <customLabels>
+        <label>Supprimer la ligne</label>
+        <name>GDS_RemoveRow</name>
+    </customLabels>
+    <customLabels>
+        <label>Reprendre le solde</label>
+        <name>GDS_TakeRemainder</name>
+    </customLabels>
+    <customLabels>
+        <label>Montant total</label>
+        <name>GDS_TotalAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Réparti</label>
+        <name>GDS_AllocatedAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Solde</label>
+        <name>GDS_RemainingAmount</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez d’abord saisir le montant.</label>
+        <name>GDS_EnterAmountFirst</name>
+    </customLabels>
+    <customLabels>
+        <label>La somme répartie dépasse le montant total de {0}.</label>
+        <name>GDS_OverAllocated</name>
+    </customLabels>
+    <customLabels>
+        <label>Cette ligne dépasse le montant total.</label>
+        <name>GDS_RowOverAllocated</name>
+    </customLabels>
+    <customLabels>
+        <label>Solde restant à répartir : {0}.</label>
+        <name>GDS_RemainingOpen</name>
+    </customLabels>
+    <customLabels>
+        <label>Le montant total est entièrement réparti.</label>
+        <name>GDS_FullyAllocated</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez sélectionner une affectation.</label>
+        <name>GDS_DesignationRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Le montant doit être supérieur à 0.</label>
+        <name>GDS_AmountGreaterZero</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} lignes au maximum.</label>
+        <name>GDS_MaxRowsReached</name>
+    </customLabels>
+    <customLabels>
+        <label>Veuillez répartir exactement 100 % du montant total et compléter toutes les lignes.</label>
+        <name>GDS_ValidateError</name>
+    </customLabels>
+    <customLabels>
+        <label>Aucune affectation disponible.</label>
+        <name>GDS_NoDesignations</name>
+    </customLabels>
+    <customLabels>
+        <label>Rechercher une affectation...</label>
+        <name>GDS_SearchPlaceholder</name>
+    </customLabels>
+    <customLabels>
+        <label>Aucun résultat</label>
+        <name>GDS_NoResults</name>
+    </customLabels>
+    <customLabels>
+        <label>Effacer la sélection</label>
+        <name>GDS_ClearSelection</name>
+    </customLabels>
+</Translations>
